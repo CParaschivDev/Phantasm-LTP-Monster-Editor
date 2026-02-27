@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Example MonsterSpawn.xml fixtures -->
+<MonsterSpawn>
+  <Map Number="0" Name="Noria">
+    <Spot Type="1" Description="Starter Field">
+      <Spawn Index="1" Count="5" StartX="50" StartY="50" EndX="55" EndY="55" Distance="0" Dir="-1" Value="0" />
+      <Spawn Index="99" Count="1" StartX="10" StartY="10" EndX="10" EndY="10" Distance="0" Dir="-1" Value="0" />
+    </Spot>
+  </Map>
+</MonsterSpawn>

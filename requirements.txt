@@ -1,0 +1,4 @@
+# only standard library
+
+PySide6>=6.0
+pytest
