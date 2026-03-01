@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import os
 import shutil
 import datetime
+import sys
 from typing import Optional
 
 
@@ -15,8 +16,17 @@ def now_stamp() -> str:
 def backup_file(path: str) -> None:
     if not os.path.isfile(path):
         return
-    bak = f"{path}.bak_{now_stamp()}"
-    shutil.copy2(path, bak)
+    if getattr(sys, 'frozen', False):
+        app_dir = os.path.dirname(sys.executable)
+    else:
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+    backups_dir = os.path.join(app_dir, "backups")
+    os.makedirs(backups_dir, exist_ok=True)
+    base = os.path.basename(path)
+    name, ext = os.path.splitext(base)
+    bak_name = f"{name}_{now_stamp()}{ext}"
+    bak_path = os.path.join(backups_dir, bak_name)
+    shutil.copy2(path, bak_path)
 
 
 def parse_monster_spawn_xml(path: str) -> ET.ElementTree:

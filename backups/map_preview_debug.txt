@@ -1,0 +1,2 @@
+LOAD_OK: C:\MuServer\[SERVER]\Data\Monster\mu_monster_editor\ClientMaps\Map_0.ozt -> 256x256 offset=48
+LOAD_PAIR: terrain=None client=C:\MuServer\[SERVER]\Data\Monster\mu_monster_editor\ClientMaps\Map_0.ozt -> 256x256
